@@ -18,6 +18,11 @@ public enum EchoLogDestination {
 open class EchoLog {
 #if DEBUG
     private static var beaver = SwiftyBeaver.self
+    
+    public static var logFileURL: URL? {
+        let fileDest = beaver.destinations.first(where: { $0 is FileDestination }) as? FileDestination
+        return fileDest?.logFileURL
+    }
 #endif
 
     open class func addLogDestination(_ destination: EchoLogDestination) {
