@@ -46,28 +46,28 @@ extension EchoLog {
     open class func verbose(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
 #if DEBUG
-        beaver.verbose(message(), file, function, line: line, context: context)
+        beaver.verbose(message(), file: file, function: function, line: line, context: context)
 #endif
     }
 
     open class func debug(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
 #if DEBUG
-        beaver.debug(message(), file, function, line: line, context: context)
+        beaver.debug(message(), file: file, function: function, line: line, context: context)
 #endif
     }
 
     open class func info(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
 #if DEBUG
-        beaver.info(message(), file, function, line: line, context: context)
+        beaver.info(message(), file: file, function: function, line: line, context: context)
 #endif
     }
 
     open class func warning(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
 #if DEBUG
-        beaver.warning(message(), file, function, line: line, context: context)
+        beaver.warning(message(), file: file, function: function, line: line, context: context)
 #endif
     }
 
@@ -75,7 +75,7 @@ extension EchoLog {
     open class func error(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
 #if DEBUG
-        beaver.error(message(), file, function, line: line, context: context)
+        beaver.error(message(), file: file, function: function, line: line, context: context)
 #endif
     }
 }
